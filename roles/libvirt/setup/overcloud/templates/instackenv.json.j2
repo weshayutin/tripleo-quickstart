@@ -6,7 +6,7 @@
   {% for node in overcloud_nodes %}
     {
       "name": "{{ node.name|replace('_', '-') }}",
-      {% if release in ['liberty', 'mitaka', 'newton' ] %}
+      {% if release in ['kilo', 'liberty', 'mitaka', 'newton' ] %}
         "pm_password": {{ virt_power_key_pvt | to_nice_json }},
         "pm_type": "pxe_ssh",
         "pm_user": "{{ ansible_user_id }}",
